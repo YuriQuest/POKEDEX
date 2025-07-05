@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     async function fetchPokemon() {
       try {
-        const response = await api.get<Pokemon>("pokemon/pikachu");
+        const response = await api.get<Pokemon>("pokemon/1");
         setPokemon(response.data);
       } catch (error) {
         console.error("Erro ao buscar Pokémon:", error);
