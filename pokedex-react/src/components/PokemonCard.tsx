@@ -6,13 +6,15 @@ interface Props {
 
 export const PokemonCard = ({ pokemon }: Props) => {
   return (
-    <div className="border p-4 rounded shadow w-60 text-center bg-white">
-        <img src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />
-        <h3 className="text-x capitalize">{pokemon.id}</h3>
-        <h2 className="text-xl font-bold capitalize">{pokemon.name}</h2>
-        <ol>
-            {pokemon.types.map((t) => t.type.name)}
-        </ol>
+    <div className="border p-4 rounded shadow w-60 h-80 flex flex-col items-center bg-white">
+        <img className="w-40 max-h-40 " src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />
+        <div>
+            <h3 className="text-x capitalize">{pokemon.id}</h3>
+            <h2 className="text-xl font-bold capitalize">{pokemon.name}</h2>
+            <ol className="">
+                {pokemon.types.map((t) => <div > {t.type.name} </div>)}
+            </ol>
+        </div>
     </div>
   );
 };
